@@ -14,3 +14,10 @@ def submittodoitem():
     todo_item = {"itemName": item_name, "itemDescription": item_desc}
     mongo.db.todos.insert_one(todo_item)
     return "Item added to DB!", 201
+
+from flask import app, render_template
+
+@app.route('/todo') 
+def todo(): 
+    return render_template('todo.html')
+
